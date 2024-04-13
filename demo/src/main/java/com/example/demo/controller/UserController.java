@@ -37,7 +37,7 @@ public class UserController {
     @Autowired
     private UserDao userDao;
 
-    private static final String KEY = "ThisIsASecretKey";
+    private static final String KEY = System.getenv("ENCRYPTION_KEY");
 
     @PostMapping("/user")
     public ResponseEntity<String> createUser(@RequestBody List<User> users) {   
